@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    xmlns:rim="http://www.blackberry.com/ns/widgets"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    id="cordova-screenshot-plugin"
+    version="0.0.1">
+    <name>Screenshot</name>
+    <description>Cordova Screenshot Plugin</description>
+    <license>The MIT License (MIT)</license>
+    <keywords>cordova,screenshot</keywords>
+    <repo>https://github.com/sugumura/cordova-screenshot-plugin.git</repo>
+    <issue>https://github.com/sugumura/cordova-screenshot-plugin/issues</issue>
+
+    <js-module src="www/screenshot.js" name="Screenshot">
+        <clobbers target="Screenshot" />
+    </js-module>
+
+    <!-- ios -->
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="Screenshot">
+                <param name="ios-package" value="CDVScreenshot"/>
+            </feature>
+        </config-file>
+
+        <header-file src="src/ios/CDVScreenshot.h" />
+        <source-file src="src/ios/CDVScreenshot.m" />
+    </platform>
+
+</plugin>
